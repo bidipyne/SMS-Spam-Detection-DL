@@ -20,7 +20,7 @@ def predict():
     if request.method == 'POST':
         message = request.form['message']
         vect = preprocess_transform(message)
-        my_prediction = clf.predict(vect)
+        my_prediction = clf.predict_classes(vect)
     return render_template('result.html',prediction = my_prediction)
 
 def preprocess_transform(message):
